@@ -1,3 +1,5 @@
+
+
 /* Ensure the body takes up the full height of the viewport and uses Flexbox */
 body {
   display: flex;
@@ -5,13 +7,11 @@ body {
   align-items: center; /* Center vertically */
   min-height: 100vh; /* Full viewport height */
   margin: 0; /* Remove default margin */
+  font-family: "Poppins", sans-serif;
 }
 
 /* Optional: Ensure the .app div has some padding and is centered */
 .app {
   text-align: center;
   padding: 20px;
-}
-body {
-  font-family: "Poppins", sans-serif;
 }
