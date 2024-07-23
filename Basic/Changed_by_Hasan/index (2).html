@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Keep</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo-area">
+            <span class="material-icons logo-icon">lightbulb</span>
+            <span class="brand-name">Keep</span>
+        </div>
+        <div class="search-area">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <span class="material-icons-outlined clear-icon hover" onclick="clearSearch()">clear</span>
+        </div>
+        <div class="settings-area">
+            <span class="material-icons-outlined settings-icon hover" onclick="toggleSettingsDropdown()">settings</span>
+            <div id="settingsDropdown" class="dropdown-content">
+                <span class="dropdown-item" onclick="editLabel()">Edit label</span>
+                <span class="dropdown-item" onclick="changeColor()">Change color</span>
+                <span class="dropdown-item" onclick="addCollaborator()">Add collaborator</span>
+                <span class="dropdown-item" onclick="deleteNote()">Delete note</span>
+            </div>
+        </div>
+        <div class="profile-actions-area">
+            <span class="material-icons profile-icon hover">account_circle</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <div class="sidebar-item active" onclick="toggleSidebarItem('notes')">
+                <span class="material-icons-outlined">lightbulb</span>
+                <span class="sidebar-label">Notes</span>
+            </div>
+            <div class="sidebar-item" onclick="toggleSidebarItem('archive')">
+                <span class="material-icons-outlined">archive</span>
+                <span class="sidebar-label">Archive</span>
+            </div>
+            <div class="sidebar-item" onclick="toggleSidebarItem('trash')">
+                <span class="material-icons-outlined">delete</span>
+                <span class="sidebar-label">Trash</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main-section">
+        <!-- Form -->
+        <div class="form-container">
+            <form id="noteForm">
+                <input type="text" id="noteTitle" class="note-title" placeholder="Title">
+                <textarea id="noteText" class="note-text" placeholder="Take a note..." rows="3"></textarea>
+                <div class="form-actions">
+                    <div class="icons">
+                        <span class="material-icons-outlined small-icon hover" onclick="openColorPicker()">palette</span>
+                        <span class="material-icons-outlined small-icon hover" onclick="openModal()">add_alert</span>
+                        <span class="material-icons-outlined small-icon hover" onclick="saveNote()">done</span>
+                    </div>
+                    <button type="button" class="close-btn hover" onclick="clearForm()">Close</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- All Notes -->
+        <div class="notes" id="notesContainer">
+            <!-- Notes will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="material-icons-outlined small-icon hover" onclick="closeModal()">close</span>
+            <h2>Reminder</h2>
+            <p>Select date and time:</p>
+            <input type="datetime-local" id="reminderDateTime">
+            <button class="hover" onclick="setReminder()">Set Reminder</button>
+        </div>
+    </div>
+
+    <!-- Color Picker Menu -->
+    <div id="colorPickerMenu" class="color-picker-menu">
+        <div class="color-option" style="background-color: #ffffff;" onclick="setColor('#ffffff')"></div>
+        <div class="color-option" style="background-color: #ffcccb;" onclick="setColor('#ffcccb')"></div>
+        <div class="color-option" style="background-color: #ffecb3;" onclick="setColor('#ffecb3')"></div>
+        <div class="color-option" style="background-color: #c8e6c9;" onclick="setColor('#c8e6c9')"></div>
+        <div class="color-option" style="background-color: #cfd8dc;" onclick="setColor('#cfd8dc')"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

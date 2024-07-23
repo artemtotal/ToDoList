@@ -1,0 +1,22 @@
+{
+    "notes": [
+      {
+        "id": 1,
+        "title": "Sample Note 1",
+        "text": "This is the content of sample note 1.",
+        "color": "#ffffff"
+      },
+      {
+        "id": 2,
+        "title": "Sample Note 2",
+        "text": "This is the content of sample note 2.",
+        "color": "#ffcccb"
+      },
+      {
+        "id": 3,
+        "title": "Sample Note 3",
+        "text": "This is the content of sample note 3.",
+        "color": "#ffecb3"
+      }
+    ]
+  }
